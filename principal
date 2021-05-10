@@ -1,0 +1,131 @@
+package ej127;
+import java.util.*;
+public class principal {
+
+	public static void main(String[] args) {
+		int check=0;
+		int elegir=0;
+		String tipoxd=null;
+		Scanner sc = new Scanner(System.in);
+		ArrayList<mascota> xx= new ArrayList<mascota>();
+		while (check==0) {
+			System.out.println("-------------------------");
+			System.out.println("1-Dar de alta una mascota");
+			System.out.println("2- Escuchar perros y gatos");
+			System.out.println("3- Escuchar periquitos y conejos");
+			System.out.println("4- Escuchar gatos y periquitos");
+			System.out.println("5. Escuchar perros y conejos");
+			System.out.println("6- Salir");
+			System.out.println("-------------------------");
+			elegir = sc.nextInt();
+			
+			if (elegir==1) {
+				int check2=0;
+				String tipo=null;
+				String nombre=null;
+				while (check2==0) {
+				System.out.println("Introduzca el tipo de mascota a dar de alta (P-Perro/G-Gato/Q-Periquito/C-Conejo");
+					tipo = sc.nextLine();
+					if (tipo.equals("P")) {
+						System.out.println("Introduzca nombre de la mascota");
+						nombre = sc.nextLine();
+						check2=1;
+						tipoxd = "perro";
+						perro p = new perro(nombre, tipoxd);
+						xx.add(p);
+					}
+					if (tipo.equals("G")) {
+						System.out.println("Introduzca nombre de la mascota");
+						nombre = sc.nextLine();
+						check2=1;
+						tipoxd= "gato";
+						gato g = new gato(nombre, tipoxd);
+						xx.add(g);
+					}
+					if (tipo.equals("Q")) {
+						System.out.println("Introduzca nombre de la mascota");
+						nombre = sc.nextLine();
+						check2=1;
+						tipoxd= "periquito";
+						periquito q = new periquito(nombre, tipoxd);
+						xx.add(q);
+					}
+					if (tipo.equals("C")) {
+						System.out.println("Introduzca nombre de la mascota");
+						nombre = sc.nextLine();
+						check2=1;
+						tipoxd="conejo";
+						conejo c = new conejo(nombre, tipoxd);
+						xx.add(c);
+					}
+					
+				}
+			}
+			if (elegir==2) {
+				Iterator iter = xx.iterator();
+				while (iter.hasNext() ) {
+					mascota aux = (mascota)iter.next();
+					if (aux.getTipo().equals("perro"));
+						aux.sonido();
+					}
+				while (iter.hasNext() ) {
+					mascota aux = (mascota)iter.next();
+					if (aux.getTipo().equals("gato"));
+						aux.sonido();
+					}
+				}
+			
+			if (elegir==3) {
+				Iterator iter = xx.iterator();
+
+				while (iter.hasNext() ) {
+					mascota aux = (mascota)iter.next();
+					if (aux.getTipo().equals("periquito"));
+						aux.sonido();
+					}
+				while (iter.hasNext() ) {
+					mascota aux = (mascota)iter.next();
+					if (aux.getTipo().equals("conejo"));
+						aux.sonido();
+					}
+			}
+			if (elegir==4) {
+				Iterator iter = xx.iterator();
+
+				while (iter.hasNext() ) {
+					mascota aux = (mascota)iter.next();
+					if (aux.getTipo().equals("gato"));
+						aux.sonido();
+					}
+				while (iter.hasNext() ) {
+					mascota aux = (mascota)iter.next();
+					if (aux.getTipo().equals("periquito"));
+						aux.sonido();
+					}
+			}
+			
+			
+			if (elegir==5) {
+				Iterator iter = xx.iterator();
+
+				while (iter.hasNext() ) {
+					mascota aux = (mascota)iter.next();
+					if (aux.getTipo().equals("perro"));
+						aux.sonido();
+					}
+				while (iter.hasNext() ) {
+					mascota aux = (mascota)iter.next();
+					if (aux.getTipo().equals("conejo"));
+						aux.sonido();
+					}
+				
+			}
+			if (elegir==6) {
+				check=1;
+				System.out.println("Te vas? Qué animalada.");
+			}
+		}
+	}
+	}
+
+
