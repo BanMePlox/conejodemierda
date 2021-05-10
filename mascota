@@ -1,0 +1,19 @@
+package ej127;
+
+public abstract class mascota {
+	protected String nombre;
+	private String tipo;
+	public mascota (String nombre, String tipo) {
+		
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public String getTipo() {
+		return tipo;
+	}
+	
+	public abstract void sonido();
+	
+
+}
